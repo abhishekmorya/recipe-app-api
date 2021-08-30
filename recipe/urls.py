@@ -7,11 +7,12 @@ from recipe import views
 router = routers.DefaultRouter()
 router.register('tags', views.TagViewSet)
 router.register('ingredients',views.IngredientViewSet)
-router.register('recipe', views.RecipeViewSet)
+router.register('recipes', views.RecipeViewSet)
 
 app_name = 'recipe'
 
 urlpatterns = [
     path('', include(router.urls), name='tag-list'),
     path('', include(router.urls), name='ingredient-list'),
+    path('', include(router.urls), name='recipe-list')
 ]
